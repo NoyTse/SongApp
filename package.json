@@ -2,10 +2,16 @@
   "name": "example-react-nodejs",
   "version": "1.0.0",
   "scripts": {
-    "client": "cd client && npm start",
+    /*"client": "cd client && npm start",
     "server": "nodemon server.js",
-    "start": "concurrently --kill-others-on-fail \"nodemon server\" \"cd client && npm start\""
+    "start": "concurrently --kill-others-on-fail \"nodemon server\" \"cd client && npm start\""*/
+    "start": "node server",
+    "heroku-postbuild": "cd Client/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
+  "cacheDirectories": [
+    "node_modules",
+    "Client/node_modules"
+  ],
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",

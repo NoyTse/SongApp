@@ -27,7 +27,9 @@ class TitleAndNavigationBar extends Component {
         return (
             <div className="w3-card-4" style={{width: "100%",position: "fixed", top: "0"}}>
                 <header className="w3-container w3-center w3-xlarge w3-text-white" style={{background: "#804000"}}>
+                    <i className="fa fa-search"></i>
                     <b>הרפרטואר של נוי</b>
+                    <i className="fa fa-search"></i>
                 </header>
                 <div style={{background: "#b35900"}}>
                     <div className="w3-bar w3-text-white">

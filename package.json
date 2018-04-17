@@ -2,7 +2,9 @@
   "name": "example-react-nodejs",
   "version": "1.0.0",
   "scripts": {
-    "start": "concurrently --kill-others-on-fail 'node Server' 'cd Client && npm start'",
+    "client": "cd Client && yarn start",
+    "server": "nodemon Server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "heroku-postbuild": "cd Client/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "cacheDirectories": [

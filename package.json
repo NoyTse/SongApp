@@ -4,7 +4,7 @@
   "scripts": {
     "client": "cd Client && yarn start",
     "server": "nodemon Server.js",
-    "start": "concurrently --kill-others-on-fail 'node Server.js' 'cd Client && npm start'",
+    "start": "node Server.js",
     "install": "cd Client && npm run build && cd .."
   },
   "cacheDirectories": [

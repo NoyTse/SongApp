@@ -30,7 +30,7 @@ MongoClient.connect(connectionString, (err, mongoDBService) => {
 app.use(express.static('public'));
 
 //-----HTTP Requests / Routes
-app.get('*', function(request, response) {
+app.get('/', function(request, response) {
     response.sendFile('Client/build', 'index.html');
 });
 

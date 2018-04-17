@@ -17,7 +17,7 @@ var ObjectID = require('mongodb').ObjectID;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(express.static('Client/build'));
+app.use(express.static('Client/public'));
 
 MongoClient.connect(connectionString, (err, mongoDBService) => {
     if (err) return console.log(err);
@@ -31,7 +31,7 @@ app.use(express.static('public'));
 
 //-----HTTP Requests / Routes
 app.get('*', function(request, response) {
-    response.sendFile('Client/build/public', 'index.html'));
+    response.sendFile('Client/public', 'index.html');
 });
 
 app.post('/addSong', (req, res) => {

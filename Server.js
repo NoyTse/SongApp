@@ -27,7 +27,7 @@ MongoClient.connect(connectionString, (err, mongoDBService) => {
     });
 });
 
-app.use(express.static('public'));
+//app.use(express.static('public'));
 
 //-----HTTP Requests / Routes
 app.get('/', function(request, response) {

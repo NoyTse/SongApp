@@ -1,5 +1,5 @@
 {
-  "proxy": "https://songs-application.herokuapp.com/",
+  "proxy": "https://songs-application.herokuapp.com",
   "name": "reactexample1",
   "version": "0.1.0",
   "private": true,

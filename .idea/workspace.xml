@@ -50,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/Server.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="196">
-              <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+              <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -90,7 +90,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>console.log</find>
       <find>console</find>
       <find>filter</find>
       <find>props</find>
@@ -120,6 +119,7 @@
       <find>bui</find>
       <find>client</find>
       <find>stat</find>
+      <find>html</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -363,12 +363,12 @@
       <updated>1523744224318</updated>
       <workItem from="1523744254937" duration="34009000" />
       <workItem from="1523906212032" duration="7907000" />
-      <workItem from="1523967545925" duration="9637000" />
+      <workItem from="1523967545925" duration="9959000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51553000" />
+    <option name="totallyTimeSpent" value="51875000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -620,7 +620,7 @@
     <entry file="file://$PROJECT_DIR$/Server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
-          <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+          <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
           <folding />
         </state>
       </provider>

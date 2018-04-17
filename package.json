@@ -4,7 +4,7 @@
   "scripts": {
     "client": "cd Client && yarn start",
     "server": "nodemon Server.js",
-    "start": "concurrently --kill-others-on-fail 'nodemon Server.js' 'cd Client && yarn start'",
+    "start": "concurrently --kill-others-on-fail 'node Server.js' 'cd Client && npm start'",
     "heroku-postbuild": "cd Client/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "cacheDirectories": [

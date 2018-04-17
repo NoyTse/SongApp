@@ -30,9 +30,8 @@ MongoClient.connect(connectionString, (err, mongoDBService) => {
 app.use(express.static('public'));
 
 //-----HTTP Requests / Routes
-
-app.get('/', (req, res) => {
-    res.send("Welcome the Server!");
+app.get('*', function(request, response) {
+    response.sendFile('Client/build/public', 'index.html'));
 });
 
 app.post('/addSong', (req, res) => {

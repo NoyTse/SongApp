@@ -34,7 +34,7 @@ app.get('/', function(request, response) {
     response.sendFile('Client/build', 'index.html');
 });
 
-app.post('/addSong', (req, res) => {
+app.post('/api/addSong', (req, res) => {
     db.insertOne(req.body, (err, result) => {
         if (err) return console.log(err);
 
@@ -58,7 +58,7 @@ app.delete('/api/:id',(req, res) =>{
     });
 });
 
-app.put('api/:id',(req,res)=>{
+app.put('/api/:id',(req,res)=>{
     db.updateOne({_id: new ObjectID(req.params.id)},req.body,(err,obj) => {
         if (err) return console.log(err);
         console.log("1 doc updated");

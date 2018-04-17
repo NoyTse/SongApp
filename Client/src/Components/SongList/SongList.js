@@ -28,7 +28,7 @@ export default class SongList extends React.Component {
     }
 
     callApi = async () => {
-        const response = await fetch('http://songs-application.herokuapp.com/api/songList');
+        const response = await fetch('https://songs-application.herokuapp.com/api/songList');
         const body = await response.json();
 
         if (response.status !== 200) throw Error(body.message);

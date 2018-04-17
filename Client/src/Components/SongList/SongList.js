@@ -3,7 +3,7 @@ import SongListItem from "../SongListItem/SongListItem";
 /*import SocketIOClient from 'socket.io-client'*/
 
 
-
+const HostName = "http://songs-application.herokuapp.com/";
 
 
 export default class SongList extends React.Component {
@@ -28,7 +28,7 @@ export default class SongList extends React.Component {
     }
 
     callApi = async () => {
-        const response = await fetch(__dirname + '/api/songList');
+        const response = await fetch(HostURL + '/api/songList');
         const body = await response.json();
 
         if (response.status !== 200) throw Error(body.message);

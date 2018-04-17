@@ -18,7 +18,7 @@ export default class SongListItem extends React.Component {
                     <span className="w3-left w3-bar-item" style={{marginLeft: "0px", width: "10%"}}>
                         {this.props.votes > 0? this.props.votes: ""}
                     </span>
-                    <span className="w3-left w3-border-white w3-border w3-brown w3-circle w3-button"
+                    <span className="w3-left w3-border-white w3-border w3-brown w3-circle w3-btn"
                            onClick={this.sendSong} style={{maxWidth:"15%"}}>
                         <i className="fas fa-hand-peace"></i>
                     </span>

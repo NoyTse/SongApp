@@ -30,7 +30,7 @@ class App extends Component {
           <TitleAndNavigationBar setSearch={this.setSearch}  showSearchInput={this.state.search}
                                  onKeyUp={e =>{this.setState({searchTxt:e.target.value})}}/>
           {/*{this.state.search? "36%" : "22%"}*/}
-          <SongList marginTop={"30px"} socket={this.socket} search={this.state.searchTxt}/>
+          <SongList marginTop={"60px"} socket={this.socket} search={this.state.searchTxt}/>
 
       </div>
     );

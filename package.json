@@ -2,7 +2,7 @@
   "name": "example-react-nodejs",
   "version": "1.0.0",
   "scripts": {
-    "start": "node server",
+    "start": "node server.js",
     "heroku-postbuild": "cd Client/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "cacheDirectories": [

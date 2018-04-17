@@ -17,7 +17,7 @@ var ObjectID = require('mongodb').ObjectID;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(express.static('Client/public'));
+app.use(express.static('Client'));
 
 MongoClient.connect(connectionString, (err, mongoDBService) => {
     if (err) return console.log(err);

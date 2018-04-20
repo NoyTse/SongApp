@@ -101,7 +101,7 @@ io.on('connection', function(client) {
             if (findAllErr) return console.log(findAllErr);
 
             console.log("about to emit refresh to the client " + data);
-            client.emit("refreshSongList", records);/
+            //client.emit("refreshSongList", records);
             getListFromDbAndEmitToClients("DotNet");
         });
     });

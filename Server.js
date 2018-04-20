@@ -97,7 +97,12 @@ io.on('connection', function(client) {
     client.on('join', function(data) {
         console.log("join: " + data);
         client.join(data);
-        getListFromDbAndEmitToClients("ALL");
+        db.find().toArray(function (findAllErr, records) {
+            if (findAllErr) return console.log(findAllErr);
+
+            console.log("about to emit refresh");
+            client.emit("refreshSongList", records);
+        });
     });
 
     client.on('vote',(id)=>{

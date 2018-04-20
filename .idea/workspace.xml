@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4031f3fb-efc8-4d7d-95b8-ea012bf30fa8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Client/src/App.js" afterPath="$PROJECT_DIR$/Client/src/App.js" />
+      <change beforePath="$PROJECT_DIR$/Server.js" afterPath="$PROJECT_DIR$/Server.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+            <state relative-caret-position="346">
+              <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -66,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Server.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2100">
-              <caret line="84" column="24" lean-forward="false" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
+            <state relative-caret-position="246">
+              <caret line="99" column="12" lean-forward="true" selection-start-line="99" selection-start-column="12" selection-end-line="99" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -144,12 +144,12 @@
       <find>about</find>
       <find>getListFromDbAndEmitWebClients</find>
       <find>&quot;updateSongList&quot;</find>
-      <find>refre</find>
       <find>getLis</find>
-      <find>join</find>
       <find>all</find>
       <find>plus</find>
       <find>conne</find>
+      <find>refre</find>
+      <find>join</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -171,10 +171,10 @@
         <option value="$PROJECT_DIR$/Client/package.json" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/Client/src/Components/SongListItem/SongListItem.js" />
-        <option value="$PROJECT_DIR$/Server.js" />
         <option value="$PROJECT_DIR$/Client/src/Components/TitleAndNavigationBar/TitleAndNavigationBar.js" />
         <option value="$PROJECT_DIR$/Client/src/Components/SongList/SongList.js" />
         <option value="$PROJECT_DIR$/Client/src/App.js" />
+        <option value="$PROJECT_DIR$/Server.js" />
       </list>
     </option>
   </component>
@@ -412,12 +412,12 @@
       <workItem from="1523967545925" duration="15627000" />
       <workItem from="1524049615795" duration="22000" />
       <workItem from="1524227681730" duration="1006000" />
-      <workItem from="1524229125436" duration="1036000" />
+      <workItem from="1524229125436" duration="1300000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59607000" />
+    <option name="totallyTimeSpent" value="59871000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -831,14 +831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2100">
-          <caret line="84" column="24" lean-forward="false" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Client/src/Components/TitleAndNavigationBar/TitleAndNavigationBar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -859,8 +851,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        <state relative-caret-position="346">
+          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="99" column="12" lean-forward="true" selection-start-line="99" selection-start-column="12" selection-end-line="99" selection-end-column="12" />
           <folding />
         </state>
       </provider>

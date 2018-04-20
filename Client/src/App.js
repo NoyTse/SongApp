@@ -14,9 +14,14 @@ class App extends Component {
 
         this.socket = SocketIOClient();
         this.socket.emit('join',"web");
-        window.onFocus(()=> this.socket.emit('join',"web"));
     };
 
+    componentDidMount() {
+        window.addEventListener("focus", function(event)
+        {
+            this.socket.emit('join',"web");
+        }, false);
+    }
     setSearch(val) {
         const newState = {search: val};
         if (!val) //hiding search input so clear filtering

@@ -80,22 +80,24 @@ app.get("/api/MaxVote", (req, res) => {
     });
 });
 
-function getListFromDbAndEmitWebClients() {
+function getListFromDbAndEmitToClients(group) {
     db.find().toArray(function (findAllErr, records) {
         if (findAllErr) return console.log(findAllErr);
+
         console.log("about to emit refresh");
-        io.to("web").emit("refreshSongList", records);
+        if (group == "ALL")
+            io.emit("refreshSongList", records);
+        else
+            io.to(group).emit("refreshSongList", records);
     });
 }
 
 //----Socket handlers
 io.on('connection', function(client) {
-    console.log('Client connected...');
-
     client.on('join', function(data) {
-        console.log(data);
         console.log("join: " + data);
         client.join(data);
+        getListFromDbAndEmitToClients("ALL");
     });
 
     client.on('vote',(id)=>{
@@ -106,19 +108,13 @@ io.on('connection', function(client) {
             db.updateOne(query,setParam,(updateErr, res) => {
                 if (updateErr) console.log(updateErr);
 
-                getListFromDbAndEmitWebClients();
+                getListFromDbAndEmitToClients("web");
             });
        });
     });
 
     //--- DotNet Events
-    client.on("getSongList", () => {
-        db.find().toArray(function(findAllErr, records){
-            if (findAllErr) return console.log(findAllErr);
-            console.log("about to emit DotNet hi");
-            io.to("DotNet").emit("updateSongList",JSON.stringify(records));
-        });
-    })
+
 
     client.on("addSong", (songJson)=>{
         var songObject = JSON.parse(songJson);
@@ -128,7 +124,7 @@ io.on('connection', function(client) {
             if (err) return console.log(err);
 
             console.log("addSong >>\tsaved");
-            getListFromDbAndEmitWebClients();
+            getListFromDbAndEmitToClients("web");
 
         });
     })
@@ -144,7 +140,7 @@ io.on('connection', function(client) {
             if (err) return console.log(err);
 
             console.log("1 doc updated");
-            getListFromDbAndEmitWebClients();
+            getListFromDbAndEmitToClients("web");
         })
     })
 
@@ -153,14 +149,14 @@ io.on('connection', function(client) {
             if (err) return console.log(err);
 
             console.log("1 doc deleted")
-            getListFromDbAndEmitWebClients();
+            getListFromDbAndEmitToClients("web");
         });
     })
 
     client.on("clearVotes", ()=>{
        db.updateMany({},{$set: {Votes: 0}},(err,res)=>{
            console.log("Clear Votes Successed")
-           getListFromDbAndEmitWebClients();
+           getListFromDbAndEmitToClients("web");
        }) ;
     });
 

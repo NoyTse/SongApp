@@ -14,6 +14,7 @@ class App extends Component {
 
         this.socket = SocketIOClient();
         this.socket.emit('join',"web");
+        window.onfocus(this.socket.emit('join',"web"));
     };
 
     setSearch(val) {

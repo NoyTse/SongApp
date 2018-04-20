@@ -14,8 +14,6 @@ export default class SongList extends React.Component {
         this.songSelected = this.songSelected.bind(this);
         this.fetchSongList();
 
-        /*this.socket = SocketIOClient();
-        this.socket.emit('join',{user: "web"});*/
         this.props.socket.on('refreshSongList',(songList)=>{
             console.log(songList);
             this.setState({response: songList})

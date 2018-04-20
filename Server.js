@@ -85,10 +85,7 @@ function getListFromDbAndEmitToClients(group) {
         if (findAllErr) return console.log(findAllErr);
 
         console.log("about to emit refresh");
-        if (group == "ALL")
-            io.emit("refreshSongList", records);
-        else
-            io.to(group).emit("refreshSongList", records);
+        io.to(group).emit("refreshSongList", records);
     });
 }
 
@@ -100,7 +97,7 @@ io.on('connection', function(client) {
         db.find().toArray(function (findAllErr, records) {
             if (findAllErr) return console.log(findAllErr);
 
-            console.log("about to emit refresh");
+            console.log("about to emit refresh to the client " + data);
             client.emit("refreshSongList", records);
         });
     });

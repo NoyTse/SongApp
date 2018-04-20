@@ -85,7 +85,10 @@ function getListFromDbAndEmitToClients(group) {
         if (findAllErr) return console.log(findAllErr);
 
         console.log("about to emit refresh");
-        io.to(group).emit("refreshSongList", records);
+        if (group == "ALL")
+            io.emit("refreshSongList", records);
+        else
+            io.to(group).emit("refreshSongList", records);
     });
 }
 
@@ -126,7 +129,7 @@ io.on('connection', function(client) {
             if (err) return console.log(err);
 
             console.log("addSong >>\tsaved");
-            getListFromDbAndEmitToClients("web");
+            getListFromDbAndEmitToClients("ALL");
 
         });
     })

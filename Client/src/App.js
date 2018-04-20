@@ -19,6 +19,7 @@ class App extends Component {
     componentDidMount() {
         window.addEventListener("focus", function(event)
         {
+            console.log("focus! >> about to emit 'join' to the server")
             this.socket = SocketIOClient();
             this.socket.emit('join',"web");
         }, false);

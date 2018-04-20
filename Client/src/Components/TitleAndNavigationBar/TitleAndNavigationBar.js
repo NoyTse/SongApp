@@ -9,6 +9,8 @@ class TitleAndNavigationBar extends Component {
         };
         this.toggleSearch = this.toggleSearch.bind(this);
         this.toggleAddModal = this.toggleAddModal.bind(this);
+
+        this.k_addSongFeature = false;
     }
 
     toggleAddModal(){
@@ -34,7 +36,7 @@ class TitleAndNavigationBar extends Component {
                 <div style={{background: "#b35900"}}>
                     <div className="w3-bar w3-text-white">
                         <a className="w3-bar-item w3-button w3-border-left w3-right" onClick={this.toggleSearch}><i className="fa fa-search"></i></a>
-                        <a className="w3-bar-item w3-button w3-right" onClick={this.toggleAddModal}><i className="fa fa-plus"></i></a>
+                        {this.k_addSongFeature && <a className="w3-bar-item w3-button w3-right" onClick={this.toggleAddModal}><i className="fa fa-plus"></i></a>}
                     </div>
                     {this.props.showSearchInput && <div className="w3-animate-opacity w3-container">
                         <input className="w3-input w3-round w3-border w3-right-align" placeholder="חפש שיר.." type="text"

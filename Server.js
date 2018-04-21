@@ -7,8 +7,6 @@ var bodyParser = require('body-parser');
 
 //mongoDB variables
 const MongoClient = require('mongodb').MongoClient;
-const dbUser = "NoyTse";
-const dbPass = "Noynoy22";
 const connectionString = "mongodb://NoyTse:Noynoy22@ds141889.mlab.com:41889/firstdb";
 const collectionName = 'SongList';
 var db;
@@ -27,7 +25,6 @@ MongoClient.connect(connectionString, (err, mongoDBService) => {
     });
 });
 
-//app.use(express.static('public'));
 
 //-----HTTP Requests / Routes
 app.get('/', function(request, response) {
@@ -80,17 +77,7 @@ app.get("/api/MaxVote", (req, res) => {
     });
 });
 
-function getListFromDbAndEmitToClients(group) {
-    db.find().toArray(function (findAllErr, records) {
-        if (findAllErr) return console.log(findAllErr);
 
-        console.log("about to emit refresh");
-        if (group == "ALL")
-            io.emit("refreshSongList", records);
-        else
-            io.to(group).emit("refreshSongList", records);
-    });
-}
 
 //----Socket handlers
 io.on('connection', function(client) {
@@ -101,8 +88,7 @@ io.on('connection', function(client) {
             if (findAllErr) return console.log(findAllErr);
 
             console.log("about to emit refresh to the client " + data);
-            //client.emit("refreshSongList", records);
-            getListFromDbAndEmitToClients("DotNet");
+            client.emit("refreshSongList", records);
         });
     });
 
@@ -133,7 +119,7 @@ io.on('connection', function(client) {
             getListFromDbAndEmitToClients("ALL");
 
         });
-    })
+    });
 
     client.on("updateSong", (songJson)=>{
         var songObject = JSON.parse(songJson);
@@ -148,24 +134,34 @@ io.on('connection', function(client) {
             console.log("1 doc updated");
             getListFromDbAndEmitToClients("web");
         })
-    })
+    });
 
     client.on("deleteSong", (songID) => {
         db.deleteOne({_id: new ObjectID(songID)},(err,obj)=>{
             if (err) return console.log(err);
 
-            console.log("1 doc deleted")
+            console.log("1 doc deleted");
             getListFromDbAndEmitToClients("web");
         });
-    })
+    });
 
     client.on("clearVotes", ()=>{
        db.updateMany({},{$set: {Votes: 0}},(err,res)=>{
-           console.log("Clear Votes Successed")
+           console.log("Clear Votes Successed");
            getListFromDbAndEmitToClients("web");
        }) ;
     });
 
 });
 
+function getListFromDbAndEmitToClients(group) {
+    db.find().toArray(function (findAllErr, records) {
+        if (findAllErr) return console.log(findAllErr);
 
+        console.log("about to emit refresh");
+        if (group == "ALL")
+            io.emit("refreshSongList", records);
+        else
+            io.to(group).emit("refreshSongList", records);
+    });
+}

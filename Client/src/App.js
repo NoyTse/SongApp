@@ -4,11 +4,9 @@ import SongList from "./Components/SongList/SongList";
 import SocketIOClient from 'socket.io-client'
 
 
-
 class App extends Component {
     constructor(props){
         super(props);
-        this.contentMargin = "0";
         this.state = {searchTxt: "", search : false};
         this.setSearch = this.setSearch.bind(this);
 
@@ -19,7 +17,6 @@ class App extends Component {
     componentDidMount() {
         window.addEventListener("focus", function(event)
         {
-            console.log("focus! >> about to emit 'join' to the server")
             this.socket = SocketIOClient();
             this.socket.emit('join',"web");
         }, false);
@@ -37,9 +34,7 @@ class App extends Component {
       <div className="App">
           <TitleAndNavigationBar setSearch={this.setSearch}  showSearchInput={this.state.search}
                                  onKeyUp={e =>{this.setState({searchTxt:e.target.value})}}/>
-
           <SongList marginTop={this.state.search? "135px" : "75px"} socket={this.socket} search={this.state.searchTxt}/>
-
       </div>
     );
   }
